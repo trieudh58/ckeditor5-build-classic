@@ -30,6 +30,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
+import Preview from './preview';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -58,7 +59,8 @@ ClassicEditor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	TextTransformation,
-	WordCount
+	WordCount,
+	Preview
 ];
 
 // Editor configuration.
