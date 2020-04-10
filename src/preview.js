@@ -31,6 +31,6 @@ export default class Preview extends Plugin {
 
 	_registerCallbackHandler() {
 		const config = this.editor.config;
-		this.renderPreview = config.get( 'renderPreview' );
+		this.renderPreview = config.get( 'preview.renderPreview' );
 	}
 }
