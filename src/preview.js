@@ -3,6 +3,11 @@ import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 import imageIcon from './icons/eye.svg';
 
 export default class Preview extends Plugin {
+	constructor( editor ) {
+		super( editor );
+		this._config = editor.config.get( 'preview' ) || {};
+	}
+
 	init() {
 		const editor = this.editor;
 
@@ -19,7 +24,7 @@ export default class Preview extends Plugin {
 			// Callback executed once the image is clicked.
 			view.on( 'execute', () => {
 				const content = editor.getData();
-				if ( typeof f === 'function' ) {
+				if ( typeof this.renderPreview === 'function' ) {
 					this.renderPreview( content );
 				}
 			} );
@@ -30,7 +35,6 @@ export default class Preview extends Plugin {
 	}
 
 	_registerCallbackHandler() {
-		const config = this.editor.config;
-		this.renderPreview = config.get( 'preview.renderPreview' );
+		this.renderPreview = this._config.renderPreview;
 	}
 }

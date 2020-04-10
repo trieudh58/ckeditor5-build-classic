@@ -79,6 +79,13 @@
 						"mergeTableCells",
 					],
 				},
+				preview: {
+					renderPreview: (content) => {
+						console.log(this)
+						console.log(content)
+						console.log('x')
+					}
+				}
 			})
 				.then((editor) => {
 					window.editor = editor;
